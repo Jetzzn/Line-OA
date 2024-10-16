@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFF App</title>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+    <div id="liffAppContent">
+        <p id="loading">กำลังโหลด...</p>
+        <p id="error" style="color: red;"></p>
+    </div>
+
+    <script>
+        async function initializeLiff() {
+            try {
+                await liff.init({ liffId: "2006446401-VnbJ5dG9" }); // ตรวจสอบว่า LIFF ID นี้ถูกต้อง
+                document.getElementById('loading').style.display = 'none';
+                
+                if (!liff.isLoggedIn()) {
+                    liff.login();
+                } else {
+                    const profile = await liff.getProfile();
+                    const jotformUrl = `https://form.jotform.com/242799562521465?lineUser=${profile.userId}`;
+                    console.log("Redirecting to:", jotformUrl);
+                    window.location.href = jotformUrl;
+                }
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').textContent = 'เกิดข้อผิดพลาด: ' + error;
+                console.error("LIFF error", error);
+            }
+        }
+
+        initializeLiff();
+    </script>
+</body>
+</html>
