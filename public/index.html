@@ -15,14 +15,14 @@
     <script>
         async function initializeLiff() {
             try {
-                await liff.init({ liffId: "2006446401-VnbJ5dG9" }); // ตรวจสอบว่า LIFF ID นี้ถูกต้อง
+                await liff.init({ liffId: "1657498709-p6ry1vP1" }); // ตรวจสอบว่า LIFF ID นี้ถูกต้อง
                 document.getElementById('loading').style.display = 'none';
                 
                 if (!liff.isLoggedIn()) {
                     liff.login();
                 } else {
                     const profile = await liff.getProfile();
-                    const jotformUrl = `https://form.jotform.com/242799562521465?lineUser=${profile.userId}`;
+                    const jotformUrl = `https://form.jotform.com/240728660362457?lineUser=${profile.userId}`;
                     console.log("Redirecting to:", jotformUrl);
                     window.location.href = jotformUrl;
                 }
