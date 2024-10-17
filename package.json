@@ -1,27 +1,21 @@
 {
-  "name": "line-oa",
+  "name": "your-project-name",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": " ",
+  "main": "api/webhook.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vercel dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@line/bot-sdk": "^9.4.0",
-    "airtable": "^0.12.2",
-    "axios": "^1.7.7",
-    "body-parser": "^1.20.3",
-    "express": "^4.21.1",
-    "fs": "^0.0.1-security",
-    "jimp": "^1.6.0",
-    "multer": "^1.4.5-lts.1",
-    "ngrok": "^5.0.0-beta.2",
-    "qrcode": "^1.5.4",
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0",
+    "axios": "^0.21.1",
+    "multer": "^1.4.2",
     "qrcode-svg": "^1.1.0",
-    "qrcode-with-logos": "^1.1.1",
-    "sharp": "^0.33.5"
+    "airtable": "^0.11.1",
+    "sharp": "^0.28.3"
+  },
+  "devDependencies": {
+    "vercel": "^23.0.0"
   }
 }
